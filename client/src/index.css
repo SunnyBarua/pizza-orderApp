@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Lato', sans-serif;
+}
+.container-fluid,.container{
+  width: 90%;
+  max-width: 1180px;
+}
+.container-fluid> a, .nav-link{
+  color: #000 !important;
+}
+.navbar-brand{
+  font-family: 'Italianno', cursive;
+  font-weight: 700;
+  font-size: 28px;
+}
+.navbar-nav{
+  margin-left: auto;
+}
+.menu_row{
+  display: grid;
+  grid-template-columns:repeat(3, 1fr);
+  padding: 10px;
+}
+h1{
+  font-size: 22px;
+  font-weight: 500;
+}
+.card{
+  width: 22rem;
+  padding: 10px;
+  margin-bottom: 10px;
+  height: 28rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px!important;
+  margin:10px 10px;
+}
+.food__title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-fluid{
+  height: 250px;
+  width: 80%;
+  max-width: 280px;
+  margin-bottom: 5px;
+  border-radius: 50%;
+}
+.image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-container{
+  display:flex;
+  margin: 0 10px;
+  justify-content: space-between;
+  margin: 10px 10px;
+}
+.variant,.prices{
+  display: flex;
+  flex-direction: row;
+
+}
+.food_varient,.food__quantity{
+  margin-right: 5px;
+}
+.btn{
+  background-color:tomato;
+  color: aliceblue;
+}
+select{
+  border-radius: 5px;
+}
+.sr-only{
+  visibility: hidden;
+}
+.close{
+  border: none;
+  background-color: white;
+}
+.modal-content{
+  width: 350px;
+  
+}
+.modal-content img{
+  width: 300px;
+  height: 250px;
+  border-radius: 10px;
+}
+.modal__img__desc{
+  width: 300px;
+  margin-left: 2%;
+}
+.modal-footer > button{
+  margin: 0 auto;
+  width: 120px;
+}
+.fa-plus{
+  color: green !important;
+  margin:5px;
+}
+.fa-minus{
+  color: red !important;
+  margin: 5px;
+  
+}
+.fa-trash{
+  color: rgb(255, 253, 253) !important;
+  height: 70px;
+  cursor: pointer;
+}
+.food__details{
+  display: flex;
+  flex-direction: row;
+  height: 7rem;
+  width: 80%;
+  border: 1px solid white;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  position: relative;
+  background-color: tomato;
+  color: white;
+  cursor: pointer;
+}
+.food__details__image{
+  display: flex;
+  position: absolute;
+  left: 1%;
+}
+.food__details__with__btn{
+  display: flex;
+  position: absolute;
+  left: 30%;
+}
+.food__details__desc{
+  display: flex;
+  flex-direction: column;
+}
+.cart{
+  margin-top: 2rem;
+}
+.trash__btn{
+  align-items: flex-end;
+}
+input{
+  margin-top: 10px !important;
+  box-shadow: none !important;
+}
+.busket{
+  position: relative;
+}
+.cart__number{
+  position: absolute;
+  top: -12px;
+}
+#dropdown-basic{
+  background-color: white;
+  color: #000;
+  border: none;
+}
+.loader{
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading__home{
+  margin-top: 150px;
+}
+.order h3{
+  font-size: 18px;
+}
+.filter{
+  width: 80%;
+  margin: 0 auto;
+}
+.filter_input{
+  display: flex;
+  margin: 0 auto;
+  width: 60%;
+}
+.filter_input  input,button{
+  width: 85%;
+  max-width: 10rem;
+}
+.filter__select{
+  width: 85%;
+  max-width: 10rem;
+  margin-top: 10px;
+  height: 35px;
+}
+.adminfunction{
+  padding:10px;
+  background-color: rgb(1,1,77);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.adminfunction li{
+  list-style-type: none !important;
+  display: inline !important;
+  color: white !important;
+  padding: 10px;
+  text-transform: none !important;
+}
+.adminfunction> li> a{
+  color: white !important;
+  text-decoration: none !important;
+}
+.admin{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.adminfunctions{
+  padding:10px;
+  background-color: rgb(1,1,77);
+}
+.adminfunctions li{
+  
+  list-style-type: none !important;
+  display: inline !important;
+  color: white !important;
+}
+.adminfunctions li a{
+  text-decoration: none !important;
+  color: white !important;
+  padding: 20px;
+
+}
