@@ -1,4 +1,4 @@
-import { GET_USER_ORDERS_FAILED, GET_USER_ORDERS_REQUEST, GET_USER_ORDERS_SUCCESS, PLACE_ORDER_FAILED, PLACE_ORDER_REQUEST, PLACE_ORDER_SUCCESS } from "../constants/orderConstants"
+import { GET_ALLORDERS_FAILED, GET_ALLORDERS_REQUEST, GET_ALLORDERS_SUCCESS, GET_USER_ORDERS_FAILED, GET_USER_ORDERS_REQUEST, GET_USER_ORDERS_SUCCESS, PLACE_ORDER_FAILED, PLACE_ORDER_REQUEST, PLACE_ORDER_SUCCESS } from "../constants/orderConstants"
 
 export const placeOrderReducer=(state={},action)=>{
     switch(action.type){
@@ -34,6 +34,27 @@ export const getUserOrdersReducer=(state={orders : []} , action)=>{
             orders : action.payload
         }
         case GET_USER_ORDERS_FAILED : return{
+            error : action.payload ,
+            loading : false
+        }
+        default : return state
+    }
+
+}
+
+export const getAllOrdersReducer=(state={orders : []} , action)=>{
+
+    switch(action.type)
+    {
+        case GET_ALLORDERS_REQUEST : return{
+            loading : true,
+            ...state
+        }
+        case GET_ALLORDERS_SUCCESS : return{
+            loading : false ,
+            orders : action.payload
+        }
+        case GET_ALLORDERS_FAILED : return{
             error : action.payload ,
             loading : false
         }

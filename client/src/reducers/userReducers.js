@@ -1,4 +1,4 @@
-import { USER_LOGIN_FAILED, USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_REGISTER_FAILED, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS } from "../constants/userConstants"
+import { GET_USERS_FAILED, GET_USERS_REQUEST, GET_USERS_SUCCESS, USER_LOGIN_FAILED, USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_REGISTER_FAILED, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS } from "../constants/userConstants"
 
 export const registerUserReducer=(state={},action)=>{
     switch(action.type){
@@ -41,4 +41,28 @@ export const loginUserReducer=(state={},action)=>{
         default:
             return state  
     }
+}
+
+
+export const getAllUsersReducer=(state={users:[]},action)=>{
+    switch(action.type){
+        case GET_USERS_REQUEST:
+            return{
+                loading:true,
+                ...state
+            }
+        case GET_USERS_SUCCESS:
+            return{
+                loading:false,
+                users:action.payload
+            }
+        case GET_USERS_FAILED:
+            return{
+                error:action.payload,
+                loading:false
+            }
+        default:
+            return state
+    }
+
 }

@@ -203,6 +203,9 @@ input{
   margin-top: 10px;
   height: 35px;
 }
+.admin{
+  text-align: center;
+}
 .adminfunction{
   padding:10px;
   background-color: rgb(1,1,77);
@@ -221,14 +224,14 @@ input{
   color: white !important;
   text-decoration: none !important;
 }
-.admin{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .adminfunctions{
   padding:10px;
   background-color: rgb(1,1,77);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 .adminfunctions li{
   
@@ -241,4 +244,33 @@ input{
   color: white !important;
   padding: 20px;
 
+}
+td,th,tr{
+  text-align: left;
+}
+.thead{
+  border-top: 1px solid black;
+  background-color: black;
+  color: white;
+}
+.fas{
+  color: black !important;
+  margin-right: 2px;
+}
+.add__pizza{
+  text-align: left;
+}
+.edit__pizza__btn{
+  display: flex;
+  flex-direction: flex-end;
+  margin-top: 10px;
+  width: 100px;
+}
+.add__pizza__btn{
+  margin-top: 15px;
+}
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

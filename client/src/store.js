@@ -4,10 +4,10 @@ import thunk from "redux-thunk"
 
 import {composeWithDevTools} from "redux-devtools-extension"
 
-import { getAllPizzasReducer} from "./reducers/pizzaReducers"
+import { addPizzaReducer, editPizzaReducer, getAllPizzasReducer,getPizzaByIdReducer} from "./reducers/pizzaReducers"
 import { cartReducer } from "./reducers/cartReducers"
-import { loginUserReducer, registerUserReducer } from "./reducers/userReducers"
-import {  getUserOrdersReducer, placeOrderReducer } from "./reducers/orderReducers"
+import { getAllUsersReducer, loginUserReducer, registerUserReducer } from "./reducers/userReducers"
+import {  getAllOrdersReducer, getUserOrdersReducer, placeOrderReducer } from "./reducers/orderReducers"
 
 const finalReducer=combineReducers({
     getAllPizzasReducer:getAllPizzasReducer,
@@ -16,6 +16,11 @@ const finalReducer=combineReducers({
     loginUserReducer:loginUserReducer,
     placeOrderReducer:placeOrderReducer,
     getUserOrdersReducer:getUserOrdersReducer,
+    addPizzaReducer:addPizzaReducer,
+    getPizzaByIdReducer:getPizzaByIdReducer,
+    editPizzaReducer:editPizzaReducer,
+    getAllOrdersReducer:getAllOrdersReducer,
+    getAllUsersReducer:getAllUsersReducer,
     
 })
 const cartItems=localStorage.getItem('cartItems')? JSON.parse(localStorage.getItem('cartItems')):[]

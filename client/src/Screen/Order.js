@@ -14,7 +14,8 @@ const Order = () => {
       
     }, [])
     return (
-        <div className="order">
+        <>
+        {orders.length>0 ? (<div className="order">
             <h1 style={{fontSize:'35px',textAlign:'center'}}>My Orders</h1>
             <div className="row justify-content-center" >
                 {loading && (<Loading/>)}
@@ -50,7 +51,11 @@ const Order = () => {
                     </div>
                 })}
             </div>
-        </div>
+        </div>):(
+            <h1 style={{textAlign:"center"}}>You don't have any order</h1>
+            
+        )}
+        </>
     )
 }
 

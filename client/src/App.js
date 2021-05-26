@@ -24,14 +24,9 @@ function App() {
             
           <Route exact path="/login" component={Login}/>
           <Route exact path="/register" component={Register}/>
-          <Route exact path="/orders" component={Order}/>
-          <Route exact path="/admin/pizzaslist" component={Pizzaslist}/>
-      
-       {/* <PrivateRoute exact path="/admin/pizzaslist" component={Pizzaslist}/> 
-         
-          <PrivateRoute exact path="/admin/userslist" component={Userslist} />
-          <PrivateRoute exact path="/admin/orderslist" component={Orderslist} />    
-          <PrivateRoute exact path="/admin/addpizza" component={Addpizza} />  */}
+        <Route exact path="/orders" component={Order}/>
+       
+        <Route path="/admin" component={Admin}/>
         </Switch>
       </Router>
     </div>

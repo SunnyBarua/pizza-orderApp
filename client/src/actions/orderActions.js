@@ -1,5 +1,5 @@
 import axios from "axios"
-import { GET_USER_ORDERS_FAILED, GET_USER_ORDERS_REQUEST, GET_USER_ORDERS_SUCCESS, PLACE_ORDER_FAILED, PLACE_ORDER_REQUEST, PLACE_ORDER_SUCCESS } from "../constants/orderConstants"
+import { GET_ALLORDERS_FAILED, GET_ALLORDERS_REQUEST, GET_ALLORDERS_SUCCESS, GET_USER_ORDERS_FAILED, GET_USER_ORDERS_REQUEST, GET_USER_ORDERS_SUCCESS, PLACE_ORDER_FAILED, PLACE_ORDER_REQUEST, PLACE_ORDER_SUCCESS } from "../constants/orderConstants"
 
 export const placeOrder=(token,subtotal)=>async(dispatch,getState)=>{
     dispatch({type:PLACE_ORDER_REQUEST})
@@ -7,7 +7,7 @@ export const placeOrder=(token,subtotal)=>async(dispatch,getState)=>{
     const cartItems=getState().cartReducer.cartItems
 
     try{
-        const response=await axios.post("orders/placeorder",{token,subtotal,currentUser,cartItems})
+        const response=await axios.post("/orders/placeorder",{token,subtotal,currentUser,cartItems})
         dispatch({type:PLACE_ORDER_SUCCESS})
         console.log(response)
 
@@ -24,11 +24,48 @@ export const getUserOrders=()=>async (dispatch,getState)=>{
     dispatch({type:GET_USER_ORDERS_REQUEST})
     
     try {
-        const response = await axios.post('orders/getuserorders' , {userid : currentUser._id})
+        const response = await axios.post('/orders/getuserorders' , {userid : currentUser._id})
         console.log(response);    
         dispatch({type:GET_USER_ORDERS_SUCCESS , payload : response.data})
     } catch (error) {
         dispatch({type:GET_USER_ORDERS_FAILED , payload : error})
     }
   
+  }
+
+  export const getAllOrders=()=>async (dispatch,getState)=>{
+
+    const currentUser = getState().loginUserReducer.currentUser
+    dispatch({type:GET_ALLORDERS_REQUEST})
+    
+    try {
+        const {data} = await axios.get('/orders/getallorders')
+        console.log(data);    
+        dispatch({
+            type:GET_ALLORDERS_SUCCESS ,
+            payload : data})
+    } catch (error) {
+        dispatch({
+            type:GET_ALLORDERS_FAILED ,
+            payload : error})
+    }
+  
+  }
+
+  export const deliverOrder=(orderid)=>async dispatch=>{
+      try{
+          const response=await axios.post("/orders/deliverorder",{orderid})
+          console.log(response)
+          alert("Order Delivered")
+          const orders=await axios.get("/orders/getallorders")
+          dispatch({
+              type:GET_ALLORDERS_SUCCESS,
+              payload:orders.data
+          })
+
+      }catch(error){
+          console.log(error)
+
+
+      }
   }

@@ -34,6 +34,9 @@ const Navbar = () => {
               </Dropdown.Toggle>
             
               <Dropdown.Menu>
+                { currentUser.isAdmin &&
+                 <Dropdown.Item href="/Admin" >Admin</Dropdown.Item>
+                 }
                 <Dropdown.Item href="/orders" >Orders</Dropdown.Item>
                 <Dropdown.Item href="#/action-2" onClick={()=>{dispatch(logoutUser())}}><li>Logout</li></Dropdown.Item>
               </Dropdown.Menu>
